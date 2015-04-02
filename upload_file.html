@@ -1,0 +1,25 @@
+<!-- 文件的上传和下载 -->
+<!-- 客户端配置： -->
+<!-- 表单页面 -->
+<!-- 表单的发送方式为post -->
+<!-- 添加enctype=“multipart/form-data” -->
+
+<!-- 客户端限制： -->
+<!-- 通过表单隐藏域限制上传文件的最大值,但是在客户端作的限制是没用的，可以通过审查元素方式可以修改其值 -->
+<!-- <input type='hidden' name= 'MAX_FILE_SIZE' value='字节数'/> -->
+<!-- <input type='file' name='myFile' accept='文件的MIME类型'/> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>the image</title>
+</head>
+<body>
+<form action="upload_file.php" method="post" enctype="multipart/form-data">
+请选择要上传的文件：
+<input type="file" name="myfile" /><br />
+<input type="submit" value="上传文件"/><br />
+</form>
+</body>
+</html>

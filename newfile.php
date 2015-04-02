@@ -1,3 +1,4 @@
+
 <?php 
 /*
 服务器端配置：
@@ -24,6 +25,13 @@ UPLOAD_ERR_NO_FILE:其值为4，没有文件被上传。
 UPLOAD_ERR_TMP_DIR:其值为6，找不到临时文件夹。
 UPLOAD_ERR_CANT_WRITE:其值为7，文件写入失败。
 UPLOAD_ERR_EXTENSION:其值为8，上传的文件被PHP扩展程序中断。
+
+文件上传限制
+服务器端限制：
+限制上传文件的大小
+限制上传文件类型
+检测是否为真实图片类型
+检测是否为HTTP POST方式上传
 */
 
 //$_FILES:文件上传变量
@@ -31,7 +39,7 @@ UPLOAD_ERR_EXTENSION:其值为8，上传的文件被PHP扩展程序中断。
 //move_uploaded_file($tmp_name,$destination):将服务器上的临时文件移动到指定目录下
 //叫什么名字，移动成功返回true，否则返回false
 // print_r($_FILES);
-// $filename=$_FILES['myfile']['name']; //二维数组
+// $file_name=$_FILES['myfile']['name']; //二维数组
 // $type=$_FILES['myfile']['type'];
 // $tmp_name=$_FILES['myfile']['tmp_name'];
 // $size=$_FILES['myfile']['size'];
@@ -39,23 +47,22 @@ UPLOAD_ERR_EXTENSION:其值为8，上传的文件被PHP扩展程序中断。
 
 header('content-type:text/html;charset=utf-8');
 
-//print_r($_FILES);
+print_r($_FILES);
 $file_info=$_FILES['myfile'];
 $file_name=$file_info['name']; //二维数组
 $type=$file_info['type'];
 $tmp_name=$file_info['tmp_name'];
 $size=$file_info['size'];
 $error=$file_info['error'];
-
-if($error==UPLOAD_ERR_OK){
-	echo $error;
+	
+ if(UPLOAD_ERR_OK == $error){
 	if(move_uploaded_file($tmp_name, "uploads/".$file_name)){
 		echo '文件'.$file_name.'上传成功';
 	}else{
 		echo '文件'.$file_name.'上传失败';
 	}
 }else{
-	//匹配错误信息
+	//匹配错误信息 这里还是存在错误的，需要马上找出来，
 	switch($error){
 		case 1:
 			echo '上传的文件超过了PHP配置文件中upload_max_filesize选项的值';
