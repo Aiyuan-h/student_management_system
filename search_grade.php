@@ -5,7 +5,9 @@
  * Date: 4/16/15
  * Time: 2:23 PM
  */
-    require_once("sms_header.php");
+    require_once("grade_header.php");
+
+    do_html_header('查找成绩');
     session_start();
     $username=$_POST['username'];
     $studentid=$_POST['studentid'];
@@ -37,8 +39,11 @@
         do_html_header('出错:');
         echo $e->getMessage();
         echo '查询出错，请重新登录！';
-        do_html_url('login.php', 'Login');
-        do_html_footer();
+//        do_html_url('login.php', 'Login');
+//        do_html_footer();
         exit;
     }
+
+// end page
+//do_html_footer();
 

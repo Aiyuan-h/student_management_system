@@ -1,5 +1,5 @@
 <?php
-  require_once("sms_header.php");
+  require_once("login_header.php");
   do_html_header("重置密码...");
 
   // creating short variable name
@@ -8,12 +8,12 @@
   try {
     $password = reset_password($username);
     notify_password($username, $password);
-    echo '您的新密码已经发送到您的邮箱.<br />';
+    echo '<div style="margin-top: 160px">您的新密码已经发送到您的邮箱.</div>';
   }
   catch (Exception $e) {
       echo $e->getMessage();
-    echo '您的密码不能够被重置，请稍候再试！';
+    echo '<div style="margin-top: 160px">您的密码不能够被重置，请稍候再试！</div>';
   }
-  do_html_url('login.php', 'Login');
-  do_html_footer();
+//  do_html_url('login.php', 'Login');
+//  do_html_footer();
 ?>

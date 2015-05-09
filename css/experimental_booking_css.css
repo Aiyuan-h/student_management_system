@@ -1,0 +1,14 @@
+.container{
+    column-width: 240px;
+    -webkit-column-width: 240px;
+    -webkit-column-gap: 60px;
+    -moz-column-gap: 60px;
+    column-gap: 60px;
+    padding-top: 150px;
+}
+
+.container div{
+    width: 240px;
+    /*height: 300px;*/
+    /*margin:10px 0;*/
+}

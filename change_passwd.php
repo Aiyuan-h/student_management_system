@@ -1,5 +1,5 @@
 <?php
-  require_once('sms_header.php');
+  require_once('login_header.php');
   session_start();
   do_html_header('密码更改...');
 
@@ -30,5 +30,5 @@
     echo $e->getMessage();
   }
   display_user_menu();
-  do_html_footer();
+//  do_html_footer();
 ?>

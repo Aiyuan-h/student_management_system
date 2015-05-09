@@ -1,6 +1,6 @@
 <?php
   // include function files for this application
-  require_once('sms_header.php');
+  require_once('login_header.php');
 
   //create short variable names
   $email=$_POST['email'];
@@ -41,16 +41,16 @@
 
     // provide link to members page
     do_html_header('注册成功');
-    echo '注册成功..........!';
-    do_html_url('member.php', 'Go to members page');
+    echo '<div style="margin-top: 160px"><p>注册成功..........!</p><p>请重新<a href="login.php">登录</a></p></div>';
+//    do_html_url('member.php', 'Go to members page');
 
    // end page
-   do_html_footer();
+//   do_html_footer();
   }
   catch (Exception $e) {
      do_html_header('问题:');
-     echo $e->getMessage();
-     do_html_footer();
+     echo '<div style="margin-top: 160px">'.$e->getMessage()."</div>";
+//     do_html_footer();
      exit;
   }
 ?>
