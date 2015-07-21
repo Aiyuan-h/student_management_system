@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>登入页面</title>
     <style type="text/css">
@@ -66,15 +66,15 @@
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="form1">
     <div>
     <p class="a">用户名：</p>
-    <asp:TextBox ID ="userName" runat="server" BackColor="#F2F2F2" BorderStyle="None" Font-Size="Medium" Font-Names="Arial"></asp:TextBox>
-    <p class="b">密&nbsp&nbsp码：</p>
-    <asp:TextBox ID ="userPasswd" runat="server" TextMode="Password" BackColor="#F2F2F2" BorderStyle="None" Font-Size="Medium"></asp:TextBox>
+    <input ID ="userName" BackColor="#F2F2F2" BorderStyle="None" Font-Size="Medium" Font-Names="Arial">
+        <p class="b">密&nbsp&nbsp码：</p>
+    <input ID ="userPasswd" TextMode="Password" BackColor="#F2F2F2" BorderStyle="None" Font-Size="Medium">
     <input class="c" type="checkbox" name="student" value="yes">
     <p class="d">记住我</p>
-    <asp:ImageButton ID="LoginBtn" runat="server" ImageUrl="image/btn.png"/>
+    <!--<asp:ImageButton ID="LoginBtn" runat="server" ImageUrl="image/btn.png"/>-->
     </div>
     </form>
 </body>

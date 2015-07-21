@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<order>
+  <states PumpLeft="1" PumpRight="0" Valve1="0" Valve2="1" Valve3="0" Valve4="0" Valve5="0" Valve6="0" Valve7="0" Valve8="0" Valve9="0" Valve10="0" CEV="0" CEVO="0" EV1="1" EV2="0" EV3="0" Temperature="30" Flow1="100" Flow2="150" CEV0="0" Value1="0">
+  </states>
+</order>

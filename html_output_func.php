@@ -1,11 +1,17 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: hay
+ * Date: 4/20/15
+ * Time: 1:59 PM
+ */
 
 function do_html_header($title) {
 ?>
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>计算机控制技术教学管理平台主页</title>
+    <title><?php echo $title;?></title>
 
     <!--使用的是bootstrap3.0版本的，其他版本可能显示不同-->
     <link href="./html_file/Dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
@@ -21,15 +27,6 @@ function do_html_header($title) {
 <body>
     <div class="top" style="min-height: 1px; padding-right: 0px; padding-left: 0px; position: fixed; width:100%;z-index: 10;float:left;">
         <img src="images/1.jpg" style="z-index: 15">
-        <div class="right" style="position:absolute;float: right;z-index: 20">
-            <p class="align">
-                <span class="glyphicon glyphicon-remove"></span>
-                <a href=""><small>退出</small></a>
-                &nbsp&nbsp&nbsp
-                <span class="glyphicon glyphicon-log-out"></span>
-                <a href=""><small>关闭全部</small></a>
-            </p>
-        </div>
     </div>
     <div class="nav">
         <!--###导航栏-->
@@ -42,33 +39,48 @@ function do_html_header($title) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="main.html">Three-Tanks Platform</a>
+                <a class="navbar-brand" href="introduce_system.php">Three-Tanks Platform</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="main.html">系统介绍</a></li>
+                    <li class="active"><a href="introduce_system.php">系统介绍</a></li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">预约安排 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="experimental_booking_form.php">实验预约</a></li>
                             <li class="divider"></li>
-                            <li><a href="Experimental Preparing.aspx">实验预习</a></li>
+                            <li><a href="#">实验预习</a></li>
                         </ul>
+                    </li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">教务管理 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="imformations.aspx">通知</a></li>
+                            <li><a href="#">通知</a></li>
                             <li class="divider"></li>
-                            <li><a href="grade table.aspx">成绩查询</a></li>
+                            <li><a href="upload_file_form.php">资料的上传</a></li>
                             <li class="divider"></li>
-                            <li><a href="grade insert.aspx">成绩补录</a></li>
+                            <li><a href="download_file.php">资料的下载</a></li>
                             <li class="divider"></li>
                             <li><a href="Leaving Messages">留言管理</a></li>
                         </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">成绩管理<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="search_grade_form.php">成绩查询</a></li>
+                            <li class="divider"></li>
+                            <li><a href="update_grade_form.php">成绩修改</a></li>
+                            <li class="divider"></li>
+                            <li><a href="insert_grade_form.php">成绩补录</a></li>
+                            <li class="divider"></li>
+                            <li><a href="delete_grade_form.php">成绩删除</a></li>
+                        </ul>
+                    </li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统设置 <b class="caret"></b></a>
@@ -79,16 +91,25 @@ function do_html_header($title) {
                         </ul>
                     </li>
 
-                    <li><a href="The remote experiment.aspx">远程实验</a></li>
+                    <li><a href="#">远程实验</a></li>
 
                     <li class="dropdown">
-                        <a href="Experimental guidance.aspx" class="dropdown-toggle" data-toggle="dropdown">实验指导 <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">实验指导 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="Experimental guidance.aspx">实验指导书</a></li>
+                            <li><a href="#">实验指导书</a></li>
                             <li class="divider"></li>
-                            <li><a href="#anchor2">实验指导视频</a></li>
+                            <li><a href="#">实验指导视频</a></li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">数据库操作<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="db_backup_form.php">数据库备份</a></li>
+                            <li class="divider"></li>
+                            <li><a href="db_restore_form.php">数据库还原</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
                 <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
                     <li><a>当前用户：<?php
@@ -103,6 +124,8 @@ function do_html_header($title) {
                         <ul class="dropdown-menu">
                             <li><a href="change_passwd_form.php">密码修改</a></li>
                             <li class="divider"></li>
+                            <li><a href="login.php">重新登录</a></li>
+                            <li class="divider"></li>
                             <li><a href="logout.php">退出系统</a></li>
                         </ul>
                     </li>
@@ -111,6 +134,10 @@ function do_html_header($title) {
         </nav>
     </div>
 <?php
+//    if($title) {
+//    do_html_heading($title);
+//}
+
 }
 
 function display_login_form() {
@@ -247,18 +274,18 @@ function display_forgot_passwd() {
 <?php
 }
 
-//function do_html_URL($url, $name) {
-//    // output URL as link and br
-//?>
-<!--    <br /><a href="--><?php //echo $url;?><!--">--><?php //echo $name;?><!--</a><br />-->
+function do_html_heading($heading) {
+    // print heading
+?>
+    <h2 style="margin-top:140px"><?php echo $heading;?></h2>
 <?php
-//}
+}
 
 
 function display_db_restore(){
 ?>
     <br />
-    <form id="form1" name="form1" method="post" action="db_restore.php" enctype="multipart/form-data">
+    <form id="form1" name="form1" method="post" action="db_restore.php" enctype="multipart/form-data" style="margin-top: 160px;" >
         【数据库SQL文件】：<input id="sqlFile" name="sql_file" type="file" />
         <input id="submit" name="submit" type="submit" value="还原" />
     </form>
@@ -266,18 +293,25 @@ function display_db_restore(){
 <?php
 }
 
-function display_search_form(){
+function display_db_backup(){
+    ?>
+    <br />
+    <div style="margin-top: 160px"><a href="db_backup.php">备份</a></div>
+    <br />
+<?php
+}
 
+function display_search_form(){
 ?>
     <br />
-    <form method="post" action="search_grade.php">
+    <form method="post" action="search_grade.php" style="margin-top: 160px;" >
         <table bgcolor="#cccccc">
             <tr>
                 <td>姓名：</td>
-                <td valign="top"><input type="text" name="username"/></td></tr>
+                <td valign="top"><input type="text" name="name"/></td></tr>
             <tr>
                 <td>学号：</td>
-                <td valign="top"><input type="text" name="studentid"/></td></tr>
+                <td valign="top"><input type="text" name="id"/></td></tr>
             <tr>
                 <td colspan=2 align="center">
                     <input type="submit" value="查询">
@@ -287,23 +321,69 @@ function display_search_form(){
 <?php
 }
 
-function display_db_backup(){
-
-?>
-    <br />
-    <a href="db_backup.php">备份</a>
-    <br />
-<?php
-}
-
-
-
-function display_insert_form()
+function display_insert_grade_form()
 {
 ?>
-
+    <br />
+    <form method="post" action="insert_grade.php" style="margin-top: 160px;" >
+        <table bgcolor="#cccccc">
+            <tr>
+                <td>学号：</td>
+                <td valign="top"><input type="text" name="id"/></td></tr>
+            <tr>
+                <td>姓名：</td>
+                <td valign="top"><input type="text" name="name"/></td></tr>
+            <tr>
+                <td>成绩：</td>
+                <td valign="top"><input type="text" name="grade"/></td></tr>
+            <tr>
+                <td colspan=2 align="center">
+                    <input type="submit" value="插入成绩">
+        </table></form>
+    <br />
 <?php
 }
+
+function display_delete_grade_form()
+{
+    ?>
+    <br />
+    <form method="post" action="delete_grade.php" style="margin-top: 160px;" >
+        <table bgcolor="#cccccc">
+            <tr>
+                <td>学号：</td>
+                <td valign="top"><input type="text" name="id"/></td></tr>
+<!--            <tr>-->
+<!--                <td>成绩：</td>-->
+<!--                <td valign="top"><input type="text" name="id"/></td></tr>-->
+            <tr>
+                <td colspan=2 align="center">
+                    <input type="submit" value="删除成绩">
+        </table></form>
+    <br />
+<?php
+}
+
+function display_update_grade_form()
+{
+    ?>
+    <br />
+    <form method="post" action="update_grade.php" style="margin-top: 160px;" >
+        <table bgcolor="#cccccc">
+            <tr>
+                <td>学号：</td>
+                <td valign="top"><input type="text" name="id"/></td></tr>
+            <tr>
+                <td>成绩：</td>
+                <td valign="top"><input type="text" name="grade"/></td></tr>
+            <tr>
+                <td colspan=2 align="center">
+                    <input type="submit" value="修改成绩">
+        </table></form>
+    <br />
+<?php
+}
+
 
 function display_teacher(){
     //output teacher view
@@ -480,6 +560,24 @@ function display_experimentai_booking_form(){
             </div>
         </div>
     </div>
+<?php
+}
+
+
+function display_upload_file_form(){
+?>
+    <form action="upload_file.php" method="post" enctype="multipart/form-data" style="margin-top: 160px;">
+        请选择要上传的文件：
+        <input type="file" name="myfile" /><br />
+        <input type="submit" value="上传文件"/><br />
+    </form>
+<?php
+}
+
+function display_download_file_form(){
+    ?>
+    <!--超链接php文件相当于执行了php文件，如果是超链接的其他文件就是直接打开文件例如图片类型，或者html类型-->
+    <a href="download_file.php">下载</a>
 <?php
 }
 ?>

@@ -1,22 +1,28 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: hay
+ * Date: 4/20/15
+ * Time: 1:59 PM
+ */
 
 define('MYSQL_HOST','localhost');
 define('MYSQL_USER','root');
 define('MYSQL_PW','password');
 define('MYSQL_NAME','users_login');
 
-//php全局变量作用域不包含函数体
-//$cfg_dbname='users_login'; //数据库名
-//$cfg_dbpwd='password';     //数据库密码
-//$cfg_dbuser='root';        //数据库用户名
+// php全局变量作用域不包含函数体
+// $cfg_dbname='users_login'; //数据库名
+// $cfg_dbpwd='password';     //数据库密码
+// $cfg_dbuser='root';        //数据库用户名
 
 function db_connect() {
    $result = new mysqli(MYSQL_HOST, MYSQL_USER, MYSQL_PW, MYSQL_NAME);
-
    if (!$result) {
-     throw new Exception('不能够连接数据库服务器！');
+        throw new Exception('不能够连接数据库服务器！');
+        // die('Could not connect: ' . mysql_error());
    } else {
-     return $result;
+        return $result;
    }
 }
 
@@ -25,7 +31,7 @@ function db_backup(){
     $cfg_dbpwd='password';     //数据库密码
     $cfg_dbuser='root';        //数据库用户名
 
-    //设置为北京时间，不加这句的，显示的是格林威治时间
+    // 设置为北京时间，不加这句的，显示的是格林威治时间
     date_default_timezone_set('PRC');
 
     // 设置SQL文件保存文件名
@@ -40,65 +46,65 @@ function db_backup(){
     // 获取当前页面文件路径，SQL文件就导出到此文件夹内
     $tmpFile = (dirname(__FILE__))."/db_backup/".$filename;
 
-    //用MySQLDump命令导出数据库
-    //mysqldump指令需要root权限，>重定向符也需要root权限，所以使用一个sudo是不能执行备份操作的！具体见博客有介绍,将root添加密码后，这里好像可以运行了。。
+    // 用MySQLDump命令导出数据库
+    // mysqldump指令需要root权限，>重定向符也需要root权限，所以使用一个sudo是不能执行备份操作的！具体见博客有介绍,将root添加密码后，这里好像可以运行了。。
     exec("/opt/lampp/bin/mysqldump -u$cfg_dbuser -p$cfg_dbpwd $cfg_dbname --default-character-set=utf8 >".$tmpFile,$output,$return_var);
 
-    //exec("sudo /opt/lampp/bin/mysqldump -uMYSQL_USER -pMYSQL_PW MYSQL_NAME --default-character-set=utf8 | tee ".$tmpFile,$output,$return_var);
+    // exec("sudo /opt/lampp/bin/mysqldump -uMYSQL_USER -pMYSQL_PW MYSQL_NAME --default-character-set=utf8 | tee ".$tmpFile,$output,$return_var);
     if($return_var){
         throw new Exception('备份数据库失败！');
     }else{
-        //$file = fopen($tmpFile, "r"); // 打开文件
-        //echo fread($file,filesize($tmpFile));
-        //fclose($file);
+        // $file = fopen($tmpFile, "r"); // 打开文件
+        // echo fread($file,filesize($tmpFile));
+        // fclose($file);
         return true;
     }
 }
 
 function db_restore($file_info,$allow_ext='sql'){
-    $cfg_dbname='users_login';      //数据库名
-    $cfg_dbpwd='password';  //数据库密码
-    $cfg_dbuser='root';     //数据库用户名
+    $cfg_dbname='users_login';      // 数据库名
+    $cfg_dbpwd='password';  // 数据库密码
+    $cfg_dbuser='root';     // 数据库用户名
 
     $file_name = $file_info['name']; //要导入的SQL文件名
     $tmp_name = $file_info['tmp_name'];
 
-//    //判断是否为数据库指定类型
-//    $ext=pathinfo($file_name,PATHINFO_EXTENSION);
-//    if($ext!=$allow_ext){
-//        throw new Exception('文件类型不符');
-//    }
+    // 判断是否为数据库指定类型
+    // $ext=pathinfo($file_name,PATHINFO_EXTENSION);
+    // if($ext!=$allow_ext){
+    //     throw new Exception('文件类型不符');
+    // }
 
     //判断文件是否是通过HTTP POST方式上传上来的
-//    if(!is_uploaded_file($tmp_name)){ 	//判断的是保存在服务器上的临时文件，这里注意写成$file_name，查看php手册上有讲解
-//        throw new Exception('文件不是通过HTTP POST方式上传来的');
-//    }
+    // if(!is_uploaded_file($tmp_name)){ 	//判断的是保存在服务器上的临时文件，这里注意写成$file_name，查看php手册上有讲解
+    //     throw new Exception('文件不是通过HTTP POST方式上传来的');
+    // }
 
-    set_time_limit(0); //设置超时时间为0，表示一直执行。当php在safe mode模式下无效，此时可能会导致导入超时，此时需要分段导入
+    set_time_limit(0); // 设置超时时间为0，表示一直执行。当php在safe mode模式下无效，此时可能会导致导入超时，此时需要分段导入
     $fp = @fopen($tmp_name, "r") or die("不能打开SQL文件 $file_name");//打开文件，判断是否有读权限，否则不能进行重定向操作
     mysql_connect('localhost','root' ,'password') or die("不能连接数据库");//连接数据库
     mysql_select_db('users_login') or die ("不能打开数据库");//打开数据库
-//
-    // connect to db
-    //$conn = db_connect();
 
-    echo "<p>正在清空数据库,请稍等....<br>";
-    $result = mysql_query("SHOW tables");//默认使用mysql_select打开的数据库 查找数据表操作
+    // connect to db
+    // $conn = db_connect();
+
+    echo '<p style="margin-top: 160px">正在清空数据库,请稍等....</p>';
+    $result = mysql_query("SHOW tables"); // 默认使用mysql_select打开的数据库 查找数据表操作
 
     while ($currow=mysql_fetch_array($result)) {
         mysql_query("drop TABLE IF EXISTS $currow[0]");
-        echo "清空数据表【".$currow[0]."】成功！<br>";
+        echo '<p>清空数据表【'.$currow[0].'】成功！</p>';
     }
-    echo "<br>恭喜你清理MYSQL成功<br>";///opt/lampp/htdocs/student_management_system/db_backup/users_login.sq
-    echo "正在执行导入数据库操作<br>";
+    echo '<p>恭喜你清理MYSQL成功</p>'; // opt/lampp/htdocs/student_management_system/db_backup/users_login.sq
+    echo '<p>正在执行导入数据库操作</p>';
 
-    //导入数据库的MySQL命令,返回值为0、1、2、3、4 ，0表示成功其余都表示失败！
+    // 导入数据库的MySQL命令,返回值为0、1、2、3、4 ，0表示成功其余都表示失败！
     exec("/opt/lampp/bin/mysql -u$cfg_dbuser -p$cfg_dbpwd $cfg_dbname< ".$tmp_name,$output,$return_var);
 
     if($return_var){
         throw new Exception('数据库恢复失败！');
     }else {
-        echo "<br>导入完成！";
+        echo "<script>alert('导入');window.location='introduce_system.php'</script>";
         mysql_close();
         return true;
     }

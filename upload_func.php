@@ -89,9 +89,10 @@ function upload_file($file_info,$allow_ext=array('doc','txt'),$max_size=20971520
 		exit($message);
 	}
 
-	//检测上传文件的类型
+	//  检测上传文件的类型
 	//	$ext=strtolower(end(explode('.', $file_name)));//获得文件扩展名与下面一句代码意思相同
 	$ext=pathinfo($file_info['name'],PATHINFO_EXTENSION);
+
 	if(!in_array($ext, $allow_ext)){
 		exit('非法文件类型');
 	}

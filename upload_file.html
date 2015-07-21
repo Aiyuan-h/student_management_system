@@ -16,10 +16,11 @@
 <title>the image</title>
 </head>
 <body>
-<form action="upload_file.php" method="post" enctype="multipart/form-data">
-请选择要上传的文件：
-<input type="file" name="myfile" /><br />
-<input type="submit" value="上传文件"/><br />
-</form>
+    <!--设置表单MIME编码-->
+    <form action="upload_file.php" method="post" enctype="multipart/form-data">
+    请选择要上传的文件：
+    <input type="file" name="file" /><br />
+    <input type="submit" value="上传文件"/><br />
+    </form>
 </body>
 </html>

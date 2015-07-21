@@ -1,0 +1,156 @@
+﻿<!--<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="main.aspx.cs" Inherits="Threetanks_Bowers.main" %>-->
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>计算机控制技术教学管理平台主页</title>
+
+    <!--### Bootstrap 样式表-->
+    <!--#################################################################-->
+    <link href="Dist/css/bootstrap-theme.css" type="text/css" rel="stylesheet">
+    <link href="Dist/css/bootstrap-theme.min.css" type="text/css" rel="stylesheet">
+    <link href="Dist/css/bootstrap.css" type="text/css" rel="stylesheet">
+    <link href="Dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Hi，如果你要在自己的网站上引入bootstrap样式文件的话，请使用当前最新版本v3.0.3的CDN链接，页面加载速度会更快！
+<link rel="stylesheet" href="http://cdn.bootcss.com/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+-->
+
+<!-- Documentation extras -->
+<link href="../docs-assets/css/docs.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/highlight.js/7.3/styles/github.min.css" rel="stylesheet">
+   <!-- #################################################################-->
+
+
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div style="min-height: 1px; padding-right: 0px; padding-left: 0px; position: fixed; width:100%;z-index: 1030;float:left">
+             <img src="image/1.jpg">
+         </div>
+
+    <!--###导航栏-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="main.html">Three-Tanks Platform</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="main.html">系统介绍</a></li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">预约安排 <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="Experimental booking.aspx">实验预约</a></li>
+              <li class="divider"></li>
+              <li><a href="Experimental Preparing.aspx">实验预习</a></li>
+            </ul>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">教务管理 <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="imformations.aspx">通知</a></li>
+              <li class="divider"></li>
+              <li><a href="grade table.aspx">成绩查询</a></li>
+              <li class="divider"></li>
+              <li><a href="grade insert.aspx">成绩补录</a></li>
+              <li class="divider"></li>
+              <li><a href="Leaving Messages">留言管理</a></li>
+            </ul>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统设置 <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">教师管理</a></li>
+              <li class="divider"></li>
+              <li><a href="#">学生管理</a></li>
+            </ul>
+          </li>
+
+         <li><a href="The remote experiment.aspx">远程实验</a></li>
+
+          <li class="dropdown">
+            <a href="Experimental guidance.aspx" class="dropdown-toggle" data-toggle="dropdown">实验指导 <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="Experimental guidance.aspx">实验指导书</a></li>
+              <li class="divider"></li>
+              <li><a href="#anchor2">实验指导视频</a></li>
+            </ul>
+          </li>
+
+
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </nav>
+    
+    <!--###系统介绍-->
+    <div>
+        <div style="min-height: 1px; padding-right: 15px; padding-left: 70px; position: fixed;top:30%; width:45%; float:left">
+
+             <img class="featurette-image img-responsive" src="image/xm-1.png">
+             <!-- <img class="featurette-image img-responsive" src="image/xm-1-2.png" alt="Generic placeholder image">-->
+         </div>
+
+                <div style="position: relative; min-height: 1px; padding-left: 1px; padding-right: 15px; top:180px; width: 55%; float:right ">
+
+                    <h3 class="featurette-heading"><font size="6">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp计算机控制技术实验系统 <span class="text-muted"></span></font></h3>
+                    <p class="lead">　　计算机控制技术实验系统由控制计算机和控制器两大部分组成。该系统可实现输入输出接口与过程通道技术，计算机控制算法和上位机界面操作三大功能。控制器可采集温度、压力、流量等模拟信号，使用了高精度转换芯片，最高A/D转换精度可达到24位，已满足工业级标准。实验台的面板绘制了控制器电路原理，并引出各类检测点用于测试，样式美观、操作性强。上位机用于算法选择和实验设置，可绘制液位、温度、流量等曲线，界面友好，操作简单。</p>
+                    <br />
+                    <img class="featurette-image img-responsive" src="image/xm-1-2.png" alt="Generic placeholder image">
+                    <p class="lead">
+                        系统功能<br/>
+                        PID算法三容水箱液位控制实验；<br/>
+                        PID算法单容水箱温度控制实验；<br/>
+                        PID算法流量控制实验；<br/>
+                        前馈-反馈算法三容水箱液位控制实验；<br/>
+                        串级算法三容水箱液位控制实验；<br/>
+                        智能算法三容水箱液位控制实验；<br/>
+                        数据保存及曲线绘制。
+                    </p>
+                    <br />
+                    <p class="lead">
+                        系统特点<br/>
+                        实验面板可检测控制器各类信号，操作性强。<br/>
+                        系统设有各类安全措施，例如液位开关，安全可靠，稳定性强。<br/>
+                        实验台设计美观，配套的软件界面友好。<br/>
+                    </p>
+                    <br />
+                    <p class="lead">
+                        技术参数<br/>
+                        水槽：容积 71L，长宽高580mm*490mm*250mm；<br/>
+                        水箱容积：大水箱8L，小水箱3.5L；<br/>
+                        实验台：长宽高 604mm*514mm*730mm；<br/>
+                        重量：31kg（无水时），50kg(有水时)；<br/>
+                        电源：220V交流供电；<br/>
+                        上位机界面使用C#.net编写，包含实验选择、动画显示、数据显示、曲线显示、报警显示、参数设置及历史查询等功能，界面直观，操作简单。
+                    </p>
+                    <br />
+
+                </div>
+            </div>
+    </form>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+<script src="http://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+
+<!-- Bootstrap core JS file
+  注意：此文件跟随官网最新版本更新，随时会有改变。建议使用下面v3.0.3版本的CDN链接！
+ -->
+<script src="../dist/js/bootstrap.js"></script>
+</body>
+</html>

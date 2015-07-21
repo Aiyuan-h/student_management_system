@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6E6A3554-152E-4C3F-B3D5-CB2F1B4C00C5}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Threetanks_Bowers</RootNamespace>
+    <AssemblyName>Threetanks_Bowers</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dist\css\bootstrap-theme.css" />
+    <Content Include="Dist\css\bootstrap-theme.min.css" />
+    <Content Include="Dist\css\bootstrap.css" />
+    <Content Include="Dist\css\bootstrap.min.css" />
+    <Content Include="Dist\js\bootstrap.js" />
+    <Content Include="Dist\js\bootstrap.min.js" />
+    <Content Include="Experimental booking.aspx" />
+    <Content Include="FusionCharts\ZoomLine.swf" />
+    <Content Include="grade insert.aspx" />
+    <Content Include="image\btn.png" />
+    <Content Include="image\xm-1-2.png" />
+    <Content Include="image\xm-1.png" />
+    <Content Include="image\zm.jpg" />
+    <Content Include="image\实验台.jpg" />
+    <Content Include="imformations.aspx" />
+    <Content Include="JS\FusionCharts.js" />
+    <Content Include="JS\FusionChartsExportComponent.js" />
+    <Content Include="Leaving Messages.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="main.aspx" />
+    <Content Include="The remote experiment.aspx" />
+    <Content Include="vedio-1.aspx" />
+    <Content Include="vedio-2.aspx" />
+    <Content Include="vedios\实验台整体介绍.avi" />
+    <Content Include="vedios\混合汇编.avi" />
+    <Content Include="vedios\经典PID控制.avi" />
+    <Content Include="Web.config" />
+    <Content Include="Experimental guidance.aspx" />
+    <Content Include="Experimental Preparing.aspx" />
+    <Content Include="grade table.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataAccess.cs" />
+    <Compile Include="Experimental booking.aspx.cs">
+      <DependentUpon>Experimental booking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Experimental booking.aspx.designer.cs">
+      <DependentUpon>Experimental booking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="grade insert.aspx.cs">
+      <DependentUpon>grade insert.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="grade insert.aspx.designer.cs">
+      <DependentUpon>grade insert.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="imformations.aspx.cs">
+      <DependentUpon>imformations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="imformations.aspx.designer.cs">
+      <DependentUpon>imformations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Leaving Messages.aspx.cs">
+      <DependentUpon>Leaving Messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Leaving Messages.aspx.designer.cs">
+      <DependentUpon>Leaving Messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="The remote experiment.aspx.cs">
+      <DependentUpon>The remote experiment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="The remote experiment.aspx.designer.cs">
+      <DependentUpon>The remote experiment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Experimental guidance.aspx.cs">
+      <DependentUpon>Experimental guidance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Experimental guidance.aspx.designer.cs">
+      <DependentUpon>Experimental guidance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vedio-1.aspx.cs">
+      <DependentUpon>vedio-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vedio-1.aspx.designer.cs">
+      <DependentUpon>vedio-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Experimental Preparing.aspx.cs">
+      <DependentUpon>Experimental Preparing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Experimental Preparing.aspx.designer.cs">
+      <DependentUpon>Experimental Preparing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="grade table.aspx.cs">
+      <DependentUpon>grade table.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="grade table.aspx.designer.cs">
+      <DependentUpon>grade table.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="vedio-2.aspx.cs">
+      <DependentUpon>vedio-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="vedio-2.aspx.designer.cs">
+      <DependentUpon>vedio-2.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="docments\三容水箱实验指导书.doc" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6056</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:5817/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

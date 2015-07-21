@@ -5,17 +5,17 @@
     <title>计算机控制技术教学管理平台主页</title>
 
     <!--使用的是bootstrap3.0版本的，其他版本可能显示不同-->
-    <link href="../html_file/Dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="./html_file/Dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <!--下拉菜单实现须使用js实现-->
-    <script src="../jq/jquery.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <link href="../css/main_form_css.css" type="text/css" rel="stylesheet">
-    <script src="../js/full_screen.js"></script>
+    <script src="./jq/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <link href="./css/main_form_css.css" type="text/css" rel="stylesheet">
+    <script src="./js/full_screen.js"></script>
 
 </head>
 <body>
     <div class="top" style="min-height: 1px; padding-right: 0px; padding-left: 0px; position: fixed; width:100%;z-index: 1030;float:left">
-        <img src="../images/1.jpg">
+        <img src="./images/1.jpg">
     </div>
     <div class="nav">
     <!--###导航栏-->
@@ -43,7 +43,7 @@
                             <li class="divider"></li>
                             <li><a href="Experimental Preparing.aspx">实验预习</a></li>
                         </ul>
-
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">教务管理 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -55,7 +55,7 @@
                             <li class="divider"></li>
                             <li><a href="Leaving Messages">留言管理</a></li>
                         </ul>
-
+                    </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">系统设置 <b class="caret"></b></a>
                         <ul class="dropdown-menu">
@@ -75,30 +75,18 @@
                             <li><a href="#anchor2">实验指导视频</a></li>
                         </ul>
                     </li>
-
-
-
-
-                    <!--<li class="navbar-right">-->
-                        <!--&lt;!&ndash;<span class="glyphicon glyphicon-remove"></span>&ndash;&gt;-->
-                        <!--<a href=" "><small>退出</small></a>-->
-                        <!--&lt;!&ndash;                        &nbsp&nbsp&nbsp&ndash;&gt;-->
-                    <!--</li>-->
-                    <!--<li class="navbar-right">-->
-                        <!--&lt;!&ndash;                        <span class="glyphicon glyphicon-log-out"></span>&ndash;&gt;-->
-                        <!--<a href=" "><small>关闭全部</small></a>-->
-                    <!--</li>-->
-
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
-                    <li>
-
-                    </li>
-                    <li >
-                        <!--<span class="glyphicon glyphicon-remove"></span>-->
-                        <a href=""><small>退出</small></a>
-                        <!--                        &nbsp&nbsp&nbsp-->
+                    <li><a>当前用户：</a></li>
+                    <li><a><?php echo $_SESSION[valide]?></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">用户设置<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="">密码修改</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#anchor2">退出系统</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div><!-- /.navbar-collapse -->

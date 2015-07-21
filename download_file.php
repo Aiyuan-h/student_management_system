@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: hay
+ * Date: 4/20/15
+ * Time: 1:59 PM
+ */
 /*
  * 文件下载：
  * 文件下载的类型使用MIME类型表示
@@ -17,10 +23,10 @@
  * 如果不是调用其他文件，仅仅是单独使用一个PHP或者HTML文件，在header()被调用之前有输出也会出错。
  */
 
-$file_name="./download/jlmbxz2.doc";
-header("Content-type:application/msword");//指定文档mime类型
-header("Accept-Ranges: bytes");
-header('content-disposition:attachment；file_name='.$file_name);//指定文件的描述，是附件，并且指定文件名
-header('content-length:'.filesize($file_name));//指定文件的大小
-readfile($file_name);
+    $file_name="./download/file_down.doc";
+    header("Content-type:application/msword");//指定文档mime类型
+    header("Accept-Ranges: bytes");
+    header('content-disposition:attachment；file_name='.$file_name);//指定文件的描述，是附件，并且指定文件名
+    header('content-length:'.filesize($file_name));//指定文件的大小
+    readfile($file_name);
 

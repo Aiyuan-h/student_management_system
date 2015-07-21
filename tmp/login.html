@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>student manage system</title>
+
+    <link href="../css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="../css/login_css.css" type="text/css" rel="stylesheet">
+    <script src="../jq/jquery.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+</head>
+<body >
+    <div class="photo_contain">
+        <img src="../login_photo/2013517234333476.jpg"/>
+        <div class="login">
+            <!--<div class="container">-->
+                <div class="shadeDiv"></div>
+                <form class="form-signin" role="form">
+                    <h2 class="form-signin-heading"style="margin: 0px">用户登录</h2>
+                    <a class="form-register" href="../register_form.php" style="float: right">注册？</a>
+                    <br>
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                        <input type="text" class="form-control" placeholder="用户名" required autofocus>
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-lg btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
+                            <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                <li><a href="#">学生</a></li>
+                                <li><a href="#">教师</a></li>
+                                <li><a href="#">管理员</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+                        <input type="password" class="form-control" placeholder="密码" required>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" value="remember-me"> 记住我
+                        </label>
+
+                        <label style="float: right">
+                        <a href="../forgot_passwd_form.php">忘记密码?</a>
+                        </label>
+                    </div>
+                    <!--<div>-->
+
+                    <!--</div>-->
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
+                </form>
+            <!--</div> &lt;!&ndash; /container &ndash;&gt;-->
+        </div>
+    </div>
+</body>
+</html>
+
